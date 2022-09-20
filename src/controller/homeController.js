@@ -14,7 +14,8 @@ let getDetailPage = async (req, res) => {
 let createNewUser = async (req, res) => {
   const { firstName, lastName, email, address } = req.body
 
-  await pool.execute('insert into users (firstName, lastName, email, address) values (?, ?, ?, ?)', [firstName, lastName, email, address])
+  await pool.execute('insert into users (firstName, lastName, email, address) values (?, ?, ?, ?)',
+    [firstName, lastName, email, address])
   return res.redirect('/')
 }
 
